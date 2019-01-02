@@ -1,57 +1,54 @@
 $(document).ready(function () {
 
-    //button names
+    //original button names
 var topics=[
         'kittens',
         'cats',
         'puppies',
         'dogs',
         'dolphins'];
-    //create buttons
+
+    //create original and new buttons from array then add giphs from giphy site
 function renderButtons(){
     $('#addButton').empty();
     for (var i=0; i < topics.length; i++){
-
     //name buttons
         var button=$('<button>');
-        button.addClass('topic');
-        button.attr('data-name', topics[i]);
-        button.text(topics[i]);
-        $('#addButton').append(button);
-
-   console.log('#addButton'); 
+            button.addClass('topic');
+            button.attr('data-name', topics[i]);
+            button.text(topics[i]);
+        $('#addButton').append(button); 
     }
     addGif();
 };
 
-$('#addGif').on('click', function() {
-    var userGif = $('#userChoice').val().trim();
-    console.log($('#userChoice'));
-    topics.push(userGif);
-    renderButtons();
-    return false;
-    
-    if (userGif === ' ') {
-        $('#userChoice').val().trim();
-    }
+    $('#addGif').on('click', function() {
+        var userGif = $('#userChoice').val().trim();
+            console.log($('#userChoice'));
+            topics.push(userGif);
+            renderButtons();
+            console.log(topics);
+        return false;
 });
-renderButtons();
+    renderButtons();
 
+
+    //defining #addGif, where to gather the information and where to place API info.
 function addGif() {
     $('button').on('click', function() {
         var p = $(this).data('name');
-        var queryURL = "http://api.giphy.com/v1/gifs/search?api_key=xG9qyS859HjNmyyBAVZKahBHCT1I5FUQ&q=" + p + "&limit=10";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=xG9qyS859HjNmyyBAVZKahBHCT1I5FUQ&q=" + p + "&limit=10";
 
         $.ajax({ url: queryURL, method: 'GET' })
         .done(function(response) {
             var results = response.data;
             console.log(response);
 
-            for (var i = 0; i < results.length; i++) {
-                    
+            for (var i = 0; i < results.length; i++) {        
                 var gifDiv = $('<div class="item">');
                 var rating = results[i].rating;
                 var p = $('<p>').text("Rated: " + rating);
+
 
                 var gifImage = $('<img>');
                 gifImage.attr('src', results[i].images.fixed_height_still.url);
@@ -63,6 +60,7 @@ function addGif() {
                 gifDiv.append(p)
 
                 $('#gif').prepend(gifDiv);
+                console.log(gifDiv);
             }
             $('.item').children('img').on('click', function() {
 

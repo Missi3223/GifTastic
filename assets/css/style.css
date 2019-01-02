@@ -1,5 +1,6 @@
 body{
     margin-bottom: 10px;
+    height: 100%;
 }
 
 .bg-image{
@@ -12,16 +13,19 @@ body{
     z-index: -2;
     opacity: 0.7;
     background-size: cover;
-    }
+}
 
 .jumbotron{
     color:#151515;
     height: 20%;
-    padding-top:15px; 
-    padding-bottom: 0px;   
+    font-weight: bolder;
+    /* padding-top:15px; 
+    padding-bottom: 0px;    */
 }
 #jumboText{
-    font-family: 'Lobster', cursive;
+    /* font-family: 'Lobster', cursive; */
+    
+    font-family: 'Open Sans', sans-serif;
 }  
 
 .container{
@@ -31,33 +35,41 @@ body{
     height: 100%;
     margin-bottom: 10px;
     margin-top:10px;
+    font-family: 'Aclonica', sans-serif;
 } 
 
 .panel-body{
     color:#151515;
+    font-weight: bolder; 
 }
-
 
 #userInput{
     color:#DCDBDB;
     font-size: 20px;
 }
+
 #userForm{
-   
     text-align:right;
 }
+
 .item{
     color:#DCDBDB;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bolder;
+    text-transform: capitalize;
+    text-align: center;
 }
 
 .row{
     padding-left:  20px;
     padding-right: 20px;
 }
+
 #nameButtons{
     display: flex; 
     justify-content: center;
 }
+
 #gif{
     display: flex; 
     justify-content: center;
