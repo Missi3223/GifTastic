@@ -3,7 +3,7 @@
 Use the GIPHY API to make a dynamic web page that populates with gifs of your choice.
 
 ** Link to demo **
-<https://github.com/Missi3223/GifTastic.git>
+<https://missi3223.github.io/GifTastic/>
 
 ## Technology Include
 
